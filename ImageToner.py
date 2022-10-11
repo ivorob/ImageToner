@@ -4,12 +4,15 @@ import argparse
 import image
 import os
 
+# Algorithms
+# Grayscale
 def grayscale(currentPixel):
     grayscale = int(0.299 * currentPixel.red +
                     0.587 * currentPixel.green +
                     0.114 * currentPixel.blue)
     return image.Pixel(grayscale, grayscale, grayscale)
 
+# Do nothing
 def stub(currentPixel):
     return currentPixel
 
@@ -20,6 +23,7 @@ def chooseAlgorithm(name):
 
     return stub
 
+# Supported algorithms
 algorithms = (('grayscale', grayscale), )
 
 parser = argparse.ArgumentParser()
