@@ -27,7 +27,7 @@ parser.add_argument('filename')
 parser.add_argument('scheme', choices=['grayscale'])
 args = parser.parse_args()
 
-algorithm = chooseAlgorithm('grayscale')
+algorithm = chooseAlgorithm(args.scheme)
 newImage = image.FileImage(args.filename)
 width = newImage.get_width()
 height = newImage.get_height()
