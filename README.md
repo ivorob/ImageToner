@@ -4,7 +4,13 @@ Simple image toner on python
 ## Usage
 ```
 usage: ImageToner.py [-h] filename {grayscale,sepia}
-ImageToner.py: error: the following arguments are required: filename, scheme
+
+positional arguments:
+  filename
+  {grayscale,sepia}
+
+options:
+  -h, --help         show this help message and exit
 ```
 
 ## Original image
