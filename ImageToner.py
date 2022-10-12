@@ -46,7 +46,7 @@ def makeAlgorithmNames():
     choices = []
     for algorithm in algorithms:
         choices.append(algorithm[0])
-    
+
     return choices
 
 parser = argparse.ArgumentParser()
@@ -76,7 +76,7 @@ for row in range(height):
 print("\rProcessing...\t100 %")
 
 fileparts = os.path.splitext(args.filename)
-newFileName = fileparts[0] + "_new" + fileparts[1]
+newFileName = "{}_{}{}".format(fileparts[0], args.scheme, fileparts[1])
 print("Saving to '" + newFileName + "'...\t", end='')
 imageCopy.save(newFileName)
 print("OK")
