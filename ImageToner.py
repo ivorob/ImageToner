@@ -12,6 +12,22 @@ def grayscale(currentPixel):
                     0.114 * currentPixel.blue)
     return image.Pixel(grayscale, grayscale, grayscale)
 
+def sepia(currentPixel):
+    newRed = int(0.393 * currentPixel.red +
+                 0.769 * currentPixel.green +
+                 0.189 * currentPixel.blue)
+    newGreen = int(0.349 * currentPixel.red +
+                   0.686 * currentPixel.green +
+                   0.168 * currentPixel.blue)
+    newBlue = int(0.272 * currentPixel.red +
+                  0.534 * currentPixel.green +
+                  0.131 * currentPixel.blue)
+
+    return image.Pixel(
+                min(newRed, 255),
+                min(newGreen, 255),
+                min(newBlue, 255))
+
 # Do nothing
 def stub(currentPixel):
     return currentPixel
@@ -24,11 +40,18 @@ def chooseAlgorithm(name):
     return stub
 
 # Supported algorithms
-algorithms = (('grayscale', grayscale), )
+algorithms = (('grayscale', grayscale), ('sepia', sepia))
+
+def makeAlgorithmNames():
+    choices = []
+    for algorithm in algorithms:
+        choices.append(algorithm[0])
+    
+    return choices
 
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
-parser.add_argument('scheme', choices=['grayscale'])
+parser.add_argument('scheme', choices=makeAlgorithmNames())
 args = parser.parse_args()
 
 algorithm = chooseAlgorithm(args.scheme)
