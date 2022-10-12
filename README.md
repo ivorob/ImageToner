@@ -8,10 +8,10 @@ ImageToner.py: error: the following arguments are required: filename, scheme
 ```
 
 ## Original image
-![Original image](imags/tengyart.jpg "Original image")
+![Original image](images/tengyart.jpg "Original image")
 
 ## Grayscale algorithm
-![Grayscale toned image](imags/tengyart_grayscale.jpg "Grayscale toned image")
+![Grayscale toned image](images/tengyart_grayscale.jpg "Grayscale toned image")
 
 ## Sepia algorithm
-![Sepia toned image](imags/tengyart_sepia.jpg "Sepia toned image")
+![Sepia toned image](images/tengyart_sepia.jpg "Sepia toned image")
