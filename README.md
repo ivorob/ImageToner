@@ -3,14 +3,14 @@ Simple image toner on python
 
 ## Usage
 ```
-usage: ImageToner.py [-h] filename {grayscale,sepia}
+usage: ImageToner.py [-h] filename {grayscale,sepia,negative}
 
 positional arguments:
   filename
-  {grayscale,sepia}
+  {grayscale,sepia,negative}
 
 options:
-  -h, --help         show this help message and exit
+  -h, --help            show this help message and exit
 ```
 
 ## Original image
@@ -21,3 +21,6 @@ options:
 
 ## Sepia algorithm
 ![Sepia toned image](images/tengyart_sepia.jpg "Sepia toned image")
+
+## Negative algorithm
+![Negative toned image](images/tengyart_negative.jpg "Negative toned image")

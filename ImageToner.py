@@ -28,6 +28,12 @@ def sepia(currentPixel):
                 min(newGreen, 255),
                 min(newBlue, 255))
 
+def negative(currentPixel):
+    return image.Pixel(
+                255 - currentPixel.red,
+                255 - currentPixel.green,
+                255 - currentPixel.blue)
+
 # Do nothing
 def stub(currentPixel):
     return currentPixel
@@ -40,7 +46,7 @@ def chooseAlgorithm(name):
     return stub
 
 # Supported algorithms
-algorithms = (('grayscale', grayscale), ('sepia', sepia))
+algorithms = (('grayscale', grayscale), ('sepia', sepia), ('negative', negative))
 
 def makeAlgorithmNames():
     choices = []
