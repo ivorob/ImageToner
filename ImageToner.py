@@ -4,6 +4,7 @@ import argparse
 import image
 import os
 
+
 # Algorithms
 # Grayscale
 def grayscale(currentPixel):
@@ -11,6 +12,7 @@ def grayscale(currentPixel):
                     0.587 * currentPixel.green +
                     0.114 * currentPixel.blue)
     return image.Pixel(grayscale, grayscale, grayscale)
+
 
 def sepia(currentPixel):
     newRed = int(0.393 * currentPixel.red +
@@ -28,15 +30,18 @@ def sepia(currentPixel):
                 min(newGreen, 255),
                 min(newBlue, 255))
 
+
 def negative(currentPixel):
     return image.Pixel(
                 255 - currentPixel.red,
                 255 - currentPixel.green,
                 255 - currentPixel.blue)
 
+
 # Do nothing
 def stub(currentPixel):
     return currentPixel
+
 
 def chooseAlgorithm(name):
     for algorithm in algorithms:
@@ -45,8 +50,12 @@ def chooseAlgorithm(name):
 
     return stub
 
+
 # Supported algorithms
-algorithms = (('grayscale', grayscale), ('sepia', sepia), ('negative', negative))
+algorithms = (('grayscale', grayscale),
+              ('sepia', sepia),
+              ('negative', negative))
+
 
 def makeAlgorithmNames():
     choices = []
@@ -54,6 +63,7 @@ def makeAlgorithmNames():
         choices.append(algorithm[0])
 
     return choices
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument('filename')
